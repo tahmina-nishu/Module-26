@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genious </title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .highlighted{
+          font-size: 16px;
+          color:crimson;
+      }
+      .headline{
+          background-color: rgb(12, 152, 12);
+          padding: 5px;
+          text-align: center;
+      }
+      input{
+        background-color: lightgray;
+      }
+      img{
+        margin-top: 15px;
+      }
+    </style>
+
+</head>
+<body class="m-8">
+    <header>
+
+    </header>
+
+    <main>
+      <h2 class="headline text-xl font-semibold">Module : 26-3</h2>
+<!-- -------------- Note -------------- -->
+    <section class="add_event">
+        <h3 class="text-xl font-semibold">input er value ta pawar steps -- ></h3>
+        <ul>
+          <li>1. get the base value. </li>
+          <li>2. Access the input field . <br>   <span class="highlighted">const triangleBaseInput = document.getElementById('triangle-base');</span></li>
+          <li>3. get value from the input field. <br><span class="highlighted">ex : const triangleBaseText = triangleBaseInput.value;</span></li>
+          <li>4. Convert the value to a number. <br><span class="highlighted">ex : const base = parseFloat(triangleBaseText);</span></li>
+      </ul> 
+    </section>
+
+    <section class="add_event">
+      
+      <h2 class="text-2xl font-semibold">Common Function use korar steps -- ></h2>
+      <ul>
+        <li>
+          <h3 class="text-xl font-semibold">1. HTML Code</h3>
+          <img class="w-[700px] h-[250px]" src="images/html.png">
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold">2. Common Function</h3>
+          <img class="w-[700px] h-[400px]"  src="images/common-function.png">
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold">3. Calling the Common Function</h3>
+          <img class="w-[700px] h-[450px]"  src="images/function-call.png">
+        </li>
+      </ul>     
+
+    </section>
+
+
+        <!-- main content container -->
+         <div class="flex flex-col md:flex-row">
+            <!-- shape card container  -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <!-- Triangle -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                      <img src="images/triangle.png"/>
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Triangle</h2>
+                      <p>Area (A) = 0.5 x b x h</p>
+
+                      <div class="gap-2 m-auto">
+                        <input id="triangle-base" class=" w-24 rounded-sm p-2" type="text" placeholder="b"><span>cm</span>
+
+                        <input id="triangle-height" class=" w-24 rounded-sm p-2" type="text" placeholder="h"><span>cm</span>
+                        </div>
+
+                        <div>
+                          <p> Area = <span id="triangle-area"></span><span> cm <sup> 2 </sup></span></p>
+                        </div>
+
+                      <div class="card-actions">
+                        <button onclick="calculateTriangleArea()" class="btn btn-primary  w-full">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Rectangle -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                      <img src="images/rectangle.png"/>
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Rectangle</h2>
+                      <p>Area (A) = w x l</p>
+
+                      <div class="gap-2 m-auto">
+                        <input id="rectangle-base" class=" w-24 rounded-sm p-2" type="text" placeholder="w"><span>cm</span>
+
+                        <input id="rectangle-height" class=" w-24 rounded-sm p-2" type="text" placeholder="l"><span>cm</span>
+                        </div>
+
+                        <div>
+                          <p> Area = <span id="rectangle-area"></span><span> cm <sup> 2 </sup></span></p>
+                        </div>
+
+                      <div class="card-actions">
+                        <button onclick="calculateRectangleArea()" class="btn btn-primary  w-full">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Parallelogram -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                      <img src="images/parallelogram.png"/>
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Parallelogram</h2>
+                      <p>Area (A) = b x h</p>
+
+                      <div class="gap-2 m-auto">
+                        <input id="parallelogram-base" class=" w-24 rounded-sm p-2" type="text" placeholder="b"><span>cm</span>
+
+                        <input id="parallelogram-height" class=" w-24 rounded-sm p-2" type="text" placeholder="h"><span>cm</span>
+                        </div>
+
+                        <div>
+                          <p> Area = <span id="parallelogram-area"></span><span> cm <sup> 2 </sup></span></p>
+                        </div>
+
+                      <div class="card-actions">
+                        <button onclick="calculateParallelogramArea()" class="btn btn-primary  w-full">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Rhombus -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                      <img src="images/rhombus.png"/>
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Rhombus</h2>
+                      <p>Area (A) = 0.5 x d <sub>1</sub> x d <sub>2</sub></p>
+
+                      <div class="gap-2 m-auto">
+                        <input id="rhombus-d1" class=" w-24 rounded-sm p-2" type="text" placeholder="d1"><span>cm</span>
+
+                        <input id="rhombus-d2" class=" w-24 rounded-sm p-2" type="text" placeholder="d2"><span>cm</span>
+                        </div>
+
+                        <div>
+                          <p> Area = <span id="rhombus-area"></span><span> cm <sup> 2 </sup></span></p>
+                        </div>
+
+                      <div class="card-actions">
+                        <button onclick="calculateRhombusArea()" class="btn btn-primary  w-full">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Pentagon -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                      <img src="images/pentagon.png"/>
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Pentagon</h2>
+                      <p>Area (A) = 0.5 x b x h</p>
+
+                      <div class="gap-2 m-auto">
+                        <input id="triangle-base" class=" w-24 rounded-sm p-2" type="text" placeholder="b"><span>cm</span>
+
+                        <input id="triangle-height" class=" w-24 rounded-sm p-2" type="text" placeholder="h"><span>cm</span>
+                        </div>
+
+                        <div>
+                          <p> Area = <span id="triangle-area"></span><span> cm <sup> 2 </sup></span></p>
+                        </div>
+
+                      <div class="card-actions">
+                        <button onclick="calculateTriangleArea()" class="btn btn-primary  w-full">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Ellipse -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                      <img src="images/ellipse.png"/>
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Ellipse</h2>
+                      <p>Area (A) = 0.5 x b x h</p>
+
+                      <div class="gap-2 m-auto">
+                        <input id="triangle-base" class=" w-24 rounded-sm p-2" type="text" placeholder="b"><span>cm</span>
+
+                        <input id="triangle-height" class=" w-24 rounded-sm p-2" type="text" placeholder="h"><span>cm</span>
+                        </div>
+
+                        <div>
+                          <p> Area = <span id="triangle-area"></span><span> cm <sup> 2 </sup></span></p>
+                        </div>
+
+                      <div class="card-actions">
+                        <button onclick="calculateTriangleArea()" class="btn btn-primary  w-full">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- area calculator container -->
+            <div class="w-96 border-2 border-{#1111111A} rounded-md">
+                <h3 class="text-3xl text-center p-4">Area Calculation</h3>
+            </div>
+         </div>
+    </main>
+
+    <script src="scripts/triangle.js"></script>
+    <script src="scripts/rectangle.js"></script>
+    <script src="scripts/parallelogram.js"></script>
+    <script src="scripts/rhombus.js"></script>
+    <script src="scripts/pentagon.js"></script>
+    <script src="scripts/ellipse.js"></script>
+    <script src="scripts/common.js"></script>
+
+    <!-- Note er script  -->
+     <script>
+      const events = document.querySelectorAll('section');
+      for(item of events)
+      {
+          item.style.backgroundColor = "lavender";
+          item.style.borderRadius = "10px";
+          item.style.padding = "10px";
+          item.style.margin = "10px";
+      }
+
+      const spans = document.getElementsByClassName('red-text');
+      for(span of spans)
+      {
+          span.style.fontSize = '18px';
+          span.style.color = 'Crimson';
+      }
+     </script>
+</body>
+</html>
